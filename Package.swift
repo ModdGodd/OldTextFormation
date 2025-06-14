@@ -3,17 +3,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "TextFormation",
+    name: "OldTextFormation",
     platforms: [.macOS(.v10_12), .iOS(.v10)],
     products: [
-        .library(name: "TextFormation", targets: ["TextFormation"]),
+        .library(name: "OldTextFormation", targets: ["OldTextFormation"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/ChimeHQ/TextStory", from: "0.7.1"),
-        .package(url: "https://github.com/ChimeHQ/Rearrange", from: "1.5.2")
+        .package(url: "https://github.com/ChimeHQ/TextStory", exact: "0.7.1"),
+        .package(url: "https://github.com/ChimeHQ/Rearrange", exact: "1.5.2")
     ],
     targets: [
         .target(name: "TextFormation", dependencies: ["TextStory"]),
-        .testTarget(name: "TextFormationTests", dependencies: ["TextFormation", "Rearrange"]),
+        .testTarget(name: "TextFormationTests", dependencies: ["OldTextFormation", "Rearrange"]),
     ]
 )
